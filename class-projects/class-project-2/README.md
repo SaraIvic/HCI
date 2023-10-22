@@ -6,7 +6,7 @@
 
 1. **Animal Lover Advocate - Nora**
 
-![Nora.jpeg](Class%202%20Project%20a3606020bb444c82a7bb53c94ffc4e3f/Nora.jpeg)
+![Nora.jpeg](Personas/Nora.jpeg)
 
 - **Background**: Nora is a 30-year-old marketing professional who has a deep love for animals. She volunteers at the local animal rescue shelter and frequently fosters animals in need.
 - **Goals**: Nora wants to stay updated on the shelter's latest rescues, events, and volunteer opportunities. She is keen to promote the shelter's mission through her social media channels.
@@ -16,9 +16,9 @@
     - Easy sharing features for social media to help animals find forever homes.
     - Volunteer scheduling and sign-up options.
 1. **Prospective Pet Owner - Michael**
-    
-    ![Michael.jpeg](Class%202%20Project%20a3606020bb444c82a7bb53c94ffc4e3f/Michael.jpeg)
-    
+
+    ![Michael.jpeg](Personas/Michael.jpeg)
+
 
 - **Background**: Michael is a 40-year-old single professional who is considering adopting a pet for companionship. He is looking for a dog to share his active lifestyle.
 - **Goals**: Michael wants to find the perfect pet that matches his lifestyle and preferences. He needs information on available animals, their health, and adoption process.
@@ -29,7 +29,7 @@
     - Educational resources on pet care.
 1. **Animal Shelter Staff Member - Laura**
 
-![Laura.png](Class%202%20Project%20a3606020bb444c82a7bb53c94ffc4e3f/Laura.png)
+![Laura.png](Personas/Laura.png)
 
 - **Background**: Laura is a 28-year-old shelter manager with a passion for animal welfare. She's responsible for daily operations and ensuring the well-being of animals in the shelter.
 - **Goals**: Laura aims to efficiently manage the shelter's operations, streamline the adoption process, and increase community engagement.
@@ -217,4 +217,4 @@ This comprehensive categorisation addresses the diverse needs of Nora, Michael, 
 
 ## Create a sitemap
 
-![Sitemap.png](Class%202%20Project%20a3606020bb444c82a7bb53c94ffc4e3f/Sitemap.png)
+![Sitemap.png](Sitemap.png)
