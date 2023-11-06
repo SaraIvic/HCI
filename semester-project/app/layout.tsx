@@ -3,6 +3,16 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "@/node_modules/next/link";
 
+const pages = {
+  Home: "/",
+  Adoption: "/adoption",
+  ContactUs: "/contactUs",
+  EducationalResources: "/educationalResources",
+  GetInvolved: "/getInvolved",
+  // Blog: "/blog",
+  Users: "/users",
+};
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <nav className="flex flex-col items-center justify-center p-14">
-          <ul className="flex text-lg gap-4">
+          {/* <ul className="flex text-lg gap-4">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -35,6 +45,15 @@ export default function RootLayout({
             <li>
               <Link href="/contactUs">Contact Us</Link>
             </li>
+          </ul> */}
+          <ul className="flex gap-8">
+            {Object.entries(pages).map(([name, path]) => (
+              <li key={name}>
+                <Link href={path}>
+                  {name.replace(/([a-z])([A-Z])/g, "$1 $2")}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
         {children}
