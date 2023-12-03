@@ -2,15 +2,16 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "@/node_modules/next/link";
+import Navbar from "./components/Navbar/Navbar";
 
-const pages = {
+const pages: Record<string, `/${string}`> = {
   Home: "/",
   Adoption: "/adoption",
   ContactUs: "/contactUs",
   EducationalResources: "/educationalResources",
   GetInvolved: "/getInvolved",
   // Blog: "/blog",
-  Users: "/users",
+  // Users: "/users",
 };
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,34 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <nav className="flex flex-col items-center justify-center p-14">
-          {/* <ul className="flex text-lg gap-4">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/adoption">Adoption</Link>
-            </li>
-            <li>
-              <Link href="/getInvolved">Get Involved</Link>
-            </li>
-            <li>
-              <Link href="/educationalResources">Educational Resources</Link>
-            </li>
-            <li>
-              <Link href="/contactUs">Contact Us</Link>
-            </li>
-          </ul> */}
-          <ul className="flex gap-8">
-            {Object.entries(pages).map(([name, path]) => (
-              <li key={name}>
-                <Link href={path}>
-                  {name.replace(/([a-z])([A-Z])/g, "$1 $2")}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <Navbar pages={pages} />
         {children}
       </body>
     </html>

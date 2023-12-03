@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Adoption",
+};
+
 function Adoption() {
   return (
     <main className="flex justify-center text-4x1 p-14">
