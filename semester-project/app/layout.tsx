@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "@/node_modules/next/link";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./_components/Navbar/Navbar";
 
 const pages: Record<string, `/${string}`> = {
   Home: "/",

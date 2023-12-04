@@ -11,7 +11,8 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.5"
+    "next": "13.5.5",
+    "clsx": "^2.0.0"
   },
   "devDependencies": {
     "typescript": "^5",

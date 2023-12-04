@@ -1,0 +1,38 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--blue-800);
+    padding: 6px 100px;
+}
+
+.link-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 32px;
+    list-style-type: none;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16x;
+    font-weight: bold;
+}
+
+.nav-link.active {
+    color: var(--blue-300);
+}
+
+/* @media screen and (max-width: 600px){
+    .nav-logo {
+        display: none;
+    }
+    .navbar {
+        justify-content: center;
+    }
+    .link-container {
+        gap: 20px;
+    }
+} */
