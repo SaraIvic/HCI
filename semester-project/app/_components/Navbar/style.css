@@ -1,12 +1,23 @@
-.navbar {
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 6px 18px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--blue-800);
-    padding: 6px 100px;
+    height: 100%;
 }
 
-.link-container {
+.navbar {
+    background-color: var(--blue-800);
+    position: relative;
+}
+
+.hambuger-menu-icon {
+    display: none;
+}
+
+.nav-elements {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -17,7 +28,7 @@
 .nav-link {
     color: white;
     text-decoration: none;
-    font-size: 16x;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -25,14 +36,72 @@
     color: var(--blue-300);
 }
 
-/* @media screen and (max-width: 600px){
+@media screen and (max-width: 900px){
+    .nav-elements {
+        gap: 24px;
+    }
+    .nav-link {
+        font-size: 14px;
+    }
     .nav-logo {
-        display: none;
+        width: 105px;
+        height: 74px;
     }
-    .navbar {
-        justify-content: center;
-    }
-    .link-container {
+}
+
+@media screen and (max-width: 800px){
+    .nav-elements {
         gap: 20px;
     }
-} */
+    .nav-link {
+        font-size: 12px;
+    }
+    .nav-logo {
+        width: 95px;
+        height: 67px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .nav-elements {
+        gap: 16px;
+    }
+    .nav-link {
+        font-size: 11px;
+    }
+    .nav-logo {
+        width: 85px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 640px){
+    .hambuger-menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-elements{
+        display: none;
+       
+    }
+
+    .nav-elements.active{
+        position: absolute;
+        right: 0;
+        top: 70px;
+        background-color: var(--blue-800);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 24px;
+        margin: 0;
+        border-end-start-radius: 8px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+}
