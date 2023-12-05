@@ -17,11 +17,23 @@
 } */
 
 :root {
+  --blue-100: rgb(222, 245, 245);
   --blue-300: rgb(184, 233, 234);
   --blue-800: rgb(82, 122, 123);
+  --blue-900: rgb(63, 93, 94);
+  --orange-500: rgb(253, 203, 95);
+  --orange-600: rgb(230, 185, 86);
+  --orange-700: rgb(180, 144, 67);
+}
+
+* {
+  /* color: rgb(var(--foreground-rgb)); */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  /* color: rgb(var(--foreground-rgb)); */
-  margin: 0;
+  margin-top: 79px;
+  /* background-color: var(--blue-100); */
 }

@@ -21,22 +21,32 @@ const Navbar: FC<NavbarProps> = ({ pages }) => {
     setShowNavbar(!showNavbar);
   };
 
+  const removeActive = () => {
+    setShowNavbar(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="container">
         <Image
           className="nav-logo"
           src="/navbar-logo.png"
-          width={114}
-          height={80}
+          width={93}
+          height={65}
           alt="Navbar logo"
         />
         <div className="hambuger-menu-icon">
-          <Hamburger rounded color="white" onToggle={handleShowNavbar} />
+          <Hamburger
+            rounded
+            color="white"
+            duration={0.6}
+            toggled={showNavbar}
+            onToggle={handleShowNavbar}
+          />
         </div>
         <ul className={`nav-elements  ${showNavbar && "active"}`}>
           {Object.entries(pages).map(([name, path]) => (
-            <li key={name} onClick={handleShowNavbar}>
+            <li key={name} onClick={removeActive}>
               <Link
                 href={path}
                 className={clsx("nav-link", { active: pathname === path })}
