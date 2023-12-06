@@ -17,8 +17,11 @@
 } */
 
 :root {
+  --blue-50: rgb(244, 252, 252);
   --blue-100: rgb(222, 245, 245);
+  --blue-200: rgb(206, 240, 241);
   --blue-300: rgb(184, 233, 234);
+  --blue-400: rgb(170, 229, 230);
   --blue-800: rgb(82, 122, 123);
   --blue-900: rgb(63, 93, 94);
   --orange-500: rgb(253, 203, 95);
@@ -35,5 +38,5 @@
 
 body {
   margin-top: 79px;
-  /* background-color: var(--blue-100); */
+  background-color: var(--blue-100);
 }

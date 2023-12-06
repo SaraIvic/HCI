@@ -30,7 +30,7 @@ const Navbar: FC<NavbarProps> = ({ pages }) => {
       <div className="container">
         <Image
           className="nav-logo"
-          src="/navbar-logo.png"
+          src="/logo.png"
           width={93}
           height={65}
           alt="Navbar logo"
