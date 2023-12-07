@@ -6,7 +6,7 @@ interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = ({ text }) => {
-  return <button>{text.toUpperCase()}</button>;
+  return <button className="btn">{text.toUpperCase()}</button>;
 };
 
 export default Button;

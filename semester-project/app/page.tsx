@@ -1,5 +1,26 @@
 import Hero from "./_components/HeroSection/Hero";
-import HeroProps from "./_components/HeroSection/Hero";
+import Card from "./_components/Card/Card";
+
+const cards = [
+  {
+    title: "Leo",
+    text: "Leo, the playful tabby cat, found his way to our shelter after a rough start in life. With love and care, Leo blossomed into a mischievous feline friend, bringing joy to his forever home. Explore Leo's heartwarming story.",
+    btnText: "read more",
+    imageUrl: "/Leo.jpeg",
+  },
+  {
+    title: "Leonald",
+    text: "Leo, the playful tabby cat, found his way to our shelter after a rough start in life. With love and care, Leo blossomed into a mischievous feline friend, bringing joy to his forever home. Explore Leo's heartwarming story.",
+    btnText: "read more",
+    imageUrl: "/Leo.jpeg",
+  },
+  {
+    title: "Leopold",
+    text: "Leo, the playful tabby cat, found his way to our shelter after a rough start in life. With love and care, Leo blossomed into a mischievous feline friend, bringing joy to his forever home. Explore Leo's heartwarming story.",
+    btnText: "read more",
+    imageUrl: "/Leo.jpeg",
+  },
+];
 
 const hero01 = {
   index: 0,
@@ -27,6 +48,9 @@ function Home() {
   return (
     <main>
       <Hero {...hero01} />
+      {/* {cards.map((card) => (
+        <Card {...card} />
+      ))} */}
       <Hero {...hero02} />
     </main>
   );

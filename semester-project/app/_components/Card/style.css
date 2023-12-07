@@ -1,0 +1,32 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 370px;
+    height: 548px;
+    background-color: var(--blue-50);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.card-text {
+    margin: 24px 0;
+}
+
+.card-img {
+    border-radius: 8px;
+}
+
+h2 {
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+h2, p {
+    color: var(--blue-900)
+}
+
+.btn {
+    align-self: flex-start;
+}
