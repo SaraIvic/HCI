@@ -1,0 +1,42 @@
+.card-slider {
+    position: relative;
+    height: 600px;
+    background-color: var(--blue-800);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    gap: 28px;
+}
+
+.right-arrow {
+    position: absolute;
+    top: 50%;
+    right: 34px;
+    color: var(--blue-50);
+    font-size: 2.8rem;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .left-arrow {
+    position: absolute;
+    top: 50%;
+    left: 34px;
+    color: var(--blue-50);
+    font-size: 2.8rem;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  @media screen and (max-width: 550px) {
+    .right-arrow {
+      right: 5%;
+    }
+    .left-arrow {
+      left: 5%;
+    }
+ }

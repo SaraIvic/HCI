@@ -23,12 +23,14 @@ const Footer: FC<FooterProps> = ({ pages }) => {
           height={98}
           alt="Footer logo"
         />
-        <p>Changing Destinies,</p>
-        <p>One Paw at a Time</p>
+        <p className="paragraph">Changing Destinies,</p>
+        <p className="paragraph">One Paw at a Time</p>
       </div>
       <div className="footer-center">
         <h2>SITEMAP</h2>
-        <p id="darker">Explore our pages</p>
+        <p id="darker" className="paragraph">
+          Explore our pages
+        </p>
         <ul className="footer-links">
           {Object.entries(pages).map(([name, path]) => (
             <li key={name}>
@@ -52,7 +54,7 @@ const Footer: FC<FooterProps> = ({ pages }) => {
             height={30}
             alt="Email logo"
           />
-          <p>info@sheltername.org</p>
+          <p className="paragraph">info@sheltername.org</p>
         </div>
         <div className="logo-text">
           <Image
@@ -62,10 +64,12 @@ const Footer: FC<FooterProps> = ({ pages }) => {
             height={30}
             alt="Phone logo"
           />
-          <p>(555) 123-4567</p>
+          <p className="paragraph">(555) 123-4567</p>
         </div>
-        <p>Mailing Address:</p>
-        <p>Shelter Name Animal Rescue123 Caring WayCompassionville, CA 12345</p>
+        <p className="paragraph">Mailing Address:</p>
+        <p className="paragraph">
+          Shelter Name Animal Rescue123 Caring WayCompassionville, CA 12345
+        </p>
         <div className="logo-container">
           <Image
             className="logo"

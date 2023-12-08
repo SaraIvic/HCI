@@ -3,7 +3,7 @@ import "./style.css";
 import Image from "next/image";
 import Button from "../Button/Button";
 
-interface CardProps {
+export interface CardProps {
   title: string;
   text: string;
   btnText: string;
@@ -18,11 +18,11 @@ const Card: FC<CardProps> = ({ title, text, btnText, imageUrl }) => {
         src={imageUrl}
         width={330}
         height={220}
-        alt="cat called Leo"
+        alt={title}
       />
       <div className="card-text">
         <h2>{title.toLocaleUpperCase()}</h2>
-        <p>{text}</p>
+        <p className="paragraph">{text}</p>
       </div>
       <Button text={btnText} />
     </div>

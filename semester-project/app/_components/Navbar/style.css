@@ -15,6 +15,8 @@
     left: 0;
     right: 0;
     height: 80px;
+    z-index: 2;
+    border-bottom: 2px solid var(--blue-100);
 }
 
 .hambuger-menu-icon {
@@ -48,7 +50,7 @@
     border-radius: 4px;
 }
 
-@media screen and (max-width: 950px){
+/* @media screen and (max-width: 950px){
     .nav-link {
        font-size: 0.8em;
     }
@@ -65,9 +67,9 @@
     .nav-elements {
         gap: 0.6em;
     }
-}
+} */
 
-@media screen and (max-width: 660px){
+@media screen and (max-width: 950px){
     .hambuger-menu-icon {
         display: block;
         cursor: pointer;

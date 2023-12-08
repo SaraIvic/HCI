@@ -8,15 +8,16 @@
 
 .footer > div {
     width: 30%;
+    max-width: 320px;
 }
 
-p {
+.footer .paragraph {
     color: var(--blue-50);
     line-height: 24px;
     margin-bottom: 8px;
 }
 
-p#darker {
+ footer .paragraph#darker {
     color: var(--blue-300);
     font-weight: lighter;
 }
@@ -71,7 +72,7 @@ h2 {
     border-radius: 6px;
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 800px) {
     .footer-center {
         display: none;
     }
@@ -81,7 +82,7 @@ h2 {
     .footer > div {
         width: 50%;
     }
-    p {
+    .footer .paragraph {
         font-size: 12px;
     }
     .footer-logo {

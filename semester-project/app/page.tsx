@@ -1,26 +1,5 @@
 import Hero from "./_components/HeroSection/Hero";
-import Card from "./_components/Card/Card";
-
-const cards = [
-  {
-    title: "Leo",
-    text: "Leo, the playful tabby cat, found his way to our shelter after a rough start in life. With love and care, Leo blossomed into a mischievous feline friend, bringing joy to his forever home. Explore Leo's heartwarming story.",
-    btnText: "read more",
-    imageUrl: "/Leo.jpeg",
-  },
-  {
-    title: "Leonald",
-    text: "Leo, the playful tabby cat, found his way to our shelter after a rough start in life. With love and care, Leo blossomed into a mischievous feline friend, bringing joy to his forever home. Explore Leo's heartwarming story.",
-    btnText: "read more",
-    imageUrl: "/Leo.jpeg",
-  },
-  {
-    title: "Leopold",
-    text: "Leo, the playful tabby cat, found his way to our shelter after a rough start in life. With love and care, Leo blossomed into a mischievous feline friend, bringing joy to his forever home. Explore Leo's heartwarming story.",
-    btnText: "read more",
-    imageUrl: "/Leo.jpeg",
-  },
-];
+import CardSlider from "./_components/CardSlider/CardSlider";
 
 const hero01 = {
   index: 0,
@@ -44,13 +23,56 @@ const hero02 = {
   },
 };
 
+const cards = [
+  {
+    title: "Bella",
+    text: "Meet Bella, a lovable Golden Retriever who overcame adversity. Bella was rescued from a neglectful situation and, with the support of our shelter, she transformed into a happy companion. Read more about Bella's incredible journey.",
+    btnText: "read more",
+    imageUrl: "/Bella.jpeg",
+  },
+  {
+    title: "Leo",
+    text: "Leo, the playful tabby cat, found his way to our shelter after a rough start in life. With love and care, Leo blossomed into a mischievous feline friend, bringing joy to his forever home. Explore Leo's heartwarming story.",
+    btnText: "read more",
+    imageUrl: "/Leo.jpeg",
+  },
+  {
+    title: "Max",
+    text: "Max, a loyal German Shepherd, was rescued from a challenging situation. Thanks to the dedication of our shelter, Max has become a guardian and best friend to his adoptive family. Learn more about Max's incredible transformation.",
+    btnText: "read more",
+    imageUrl: "/Max.png",
+  },
+  {
+    title: "Rocky",
+    text: "Rocky, the resilient Boxer mix, faced adversity with courage and determination. His story is a testament to the indomitable spirit of rescue animals. Learn more about Rocky's journey to recovery and joy.",
+    btnText: "read more",
+    imageUrl: "/Rocky.jpeg",
+  },
+  {
+    title: "Luna",
+    text: "Meet Luna, the adventurous Siamese cat with a captivating personality. Luna's journey from the streets to a loving home is a tale of resilience and charm. Discover more about Luna's escapades.",
+    btnText: "read more",
+    imageUrl: "/Luna.jpeg",
+  },
+  {
+    title: "Charlie",
+    text: "Charlie, the energetic Border Collie, found a second chance at happiness in our shelter. His agility and intelligence make him a perfect companion for an active family. Read about Charlie's boundless enthusiasm.",
+    btnText: "read more",
+    imageUrl: "/Charlie.jpeg",
+  },
+  {
+    title: "Mia",
+    text: "Mia, the gentle Persian cat, came to us seeking warmth and care. Mia's graceful demeanor and soothing presence make her a beloved member of her forever home. Explore Mia's story of tranquility and love.",
+    btnText: "read more",
+    imageUrl: "/Mia.jpeg",
+  },
+];
+
 function Home() {
   return (
     <main>
       <Hero {...hero01} />
-      {/* {cards.map((card) => (
-        <Card {...card} />
-      ))} */}
+      <CardSlider cards={cards} />
       <Hero {...hero02} />
     </main>
   );

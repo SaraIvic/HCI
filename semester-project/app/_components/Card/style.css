@@ -18,15 +18,48 @@
     border-radius: 8px;
 }
 
-h2 {
+.card h2 {
     margin-bottom: 12px;
     font-weight: bold;
 }
 
-h2, p {
+.card h2, .card p {
     color: var(--blue-900)
+}
+.card .paragraph {
+    height: 144px;
 }
 
 .btn {
     align-self: flex-start;
 }
+
+@media screen and (max-width: 550px) {
+   .card {
+    width: 20em;
+    height: auto;
+    padding: 1em;
+   }
+   .card-img {
+    width: 17.5em;
+    height: auto;
+    }
+    .card p {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 462px) {
+    .card {
+     width: 16em;
+     height: auto;
+     padding: 0.8em;
+    }
+    .card-img {
+     width: 14em;
+     height: auto;
+    }
+     .card p {
+        font-size: 0.8em;
+    }
+ }
