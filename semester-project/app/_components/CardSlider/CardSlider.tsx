@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import "./style.css";
 import Card from "../Card/Card";
 import { CardProps } from "../Card/Card";
@@ -12,6 +12,7 @@ interface CardSliderProps {
 }
 
 const CardSlider: FC<CardSliderProps> = ({ cards }) => {
+  const isMounted = useRef(false);
   const [currentCards, setCurrentCards] = useState([0, 1, 2]);
   const [displayCount, setDisplayCount] = useState(3);
   const length = cards.length;
@@ -59,15 +60,18 @@ const CardSlider: FC<CardSliderProps> = ({ cards }) => {
   };
 
   return (
-    <section className="card-slider">
-      <IoIosArrowBack className="left-arrow" onClick={prevCard} />
-      <IoIosArrowForward className="right-arrow" onClick={nextCard} />
-      <div className="card-container">
-        {currentCards.slice(0, displayCount).map((index, arrayIndex) => (
-          <div className="slide" key={arrayIndex}>
-            <Card {...cards[index]} />
-          </div>
-        ))}
+    <section className="card-slider-container">
+      <h2 className="slider-title">SUCCES STORIES</h2>
+      <div className="card-slider">
+        <IoIosArrowBack className="left-arrow" onClick={prevCard} />
+        <IoIosArrowForward className="right-arrow" onClick={nextCard} />
+        <div className="card-container">
+          {currentCards.slice(0, displayCount).map((index, arrayIndex) => (
+            <div className="slide" key={arrayIndex}>
+              <Card {...cards[index]} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

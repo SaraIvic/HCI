@@ -22,6 +22,11 @@
     font-weight: lighter;
 }
 
+footer .paragraph#bold {
+    font-weight: bold;
+    font-size: 18px;
+}
+
 .footer-logo {
     margin-bottom: 20px;
 }
@@ -92,5 +97,8 @@ h2 {
     .logo {
         width: 20px;
         height: auto;
+    }
+    footer .paragraph#bold {
+        font-size: 14px;
     }
 }

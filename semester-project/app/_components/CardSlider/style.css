@@ -1,7 +1,19 @@
+.card-slider-container {
+  background-color: var(--blue-800);
+  
+}
+
+.slider-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--blue-50);
+  padding-top: 32px;
+}
+
 .card-slider {
     position: relative;
     height: 600px;
-    background-color: var(--blue-800);
     display: flex;
     justify-content: center;
     align-items: center;

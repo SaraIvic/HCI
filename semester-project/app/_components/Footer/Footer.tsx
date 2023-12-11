@@ -66,7 +66,9 @@ const Footer: FC<FooterProps> = ({ pages }) => {
           />
           <p className="paragraph">(555) 123-4567</p>
         </div>
-        <p className="paragraph">Mailing Address:</p>
+        <p className="paragraph" id="bold">
+          Mailing Address:
+        </p>
         <p className="paragraph">
           Shelter Name Animal Rescue123 Caring WayCompassionville, CA 12345
         </p>
