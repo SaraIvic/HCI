@@ -8,7 +8,12 @@ const BASE_API_URL = "https://jsonplaceholder.typicode.com";
 
 const getUser = async (id: string): Promise<User> => {
   const data = await fetch(`${BASE_API_URL}/users/${id}`);
-  return data.json();
+
+  if (!data) {
+    throw new Error("No users found");
+  }
+
+  return data?.json();
 };
 
 export default async function UserInfo({ params }: { params: Params }) {
