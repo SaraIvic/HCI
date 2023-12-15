@@ -6,6 +6,7 @@ import Card from "../Card/Card";
 import { CardProps } from "../Card/Card";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import Button from "../Button/Button";
 
 interface CardSliderProps {
   cards: CardProps[];
@@ -60,17 +61,22 @@ const CardSlider: FC<CardSliderProps> = ({ cards }) => {
   };
 
   return (
-    <section className="card-slider-container">
+    <section className="section-container">
       <h2 className="slider-title">SUCCES STORIES</h2>
-      <div className="card-slider">
-        <IoIosArrowBack className="left-arrow" onClick={prevCard} />
-        <IoIosArrowForward className="right-arrow" onClick={nextCard} />
-        <div className="card-container">
-          {currentCards.slice(0, displayCount).map((index, arrayIndex) => (
-            <div className="slide" key={arrayIndex}>
-              <Card {...cards[index]} />
-            </div>
-          ))}
+      <div className="card-slider-container">
+        <div className="card-slider">
+          <IoIosArrowBack className="left-arrow" onClick={prevCard} />
+          <IoIosArrowForward className="right-arrow" onClick={nextCard} />
+          <div className="card-container">
+            {currentCards.slice(0, displayCount).map((index, arrayIndex) => (
+              <div className="slide" key={arrayIndex}>
+                <Card {...cards[index]} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="slider-btn">
+          <Button href="/aboutUs" text="View All" />
         </div>
       </div>
     </section>

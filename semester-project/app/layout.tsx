@@ -5,16 +5,14 @@ import Link from "@/node_modules/next/link";
 import Navbar from "./_components/Navbar/Navbar";
 import Footer from "./_components/Footer/Footer";
 
-const pages: Record<string, `/${string}`> = {
-  Home: "/",
-  Adoption: "/adoption",
-  ContactUs: "/contactUs",
-  EducationalResources: "/educationalResources",
-  GetInvolved: "/getInvolved",
-  // Blog: "/blog",
-  // Users: "/users",
-};
-
+const pages = [
+  { title: "Home", path: "/" },
+  { title: "About Us", path: "/aboutUs" },
+  { title: "Adoption", path: "/adoption" },
+  { title: "Contact Us", path: "/contactUs" },
+  //{ title: "Educational Resources", path: "/educationalResources" },
+  { title: "Get Involved", path: "/getInvolved" },
+];
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

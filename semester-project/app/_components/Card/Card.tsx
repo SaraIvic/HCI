@@ -6,11 +6,15 @@ import Button from "../Button/Button";
 export interface CardProps {
   title: string;
   text: string;
-  btnText: string;
+  button: Button;
   imageUrl: string;
 }
+interface Button {
+  text: string;
+  href: string;
+}
 
-const Card: FC<CardProps> = ({ title, text, btnText, imageUrl }) => {
+const Card: FC<CardProps> = ({ title, text, button, imageUrl }) => {
   return (
     <div className="card">
       <Image
@@ -24,7 +28,7 @@ const Card: FC<CardProps> = ({ title, text, btnText, imageUrl }) => {
         <h2>{title.toLocaleUpperCase()}</h2>
         <p className="paragraph">{text}</p>
       </div>
-      <Button text={btnText} />
+      <Button {...button} />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import "./style.css";
 import Image from "next/image";
 import clsx from "clsx";
@@ -9,19 +9,37 @@ import { usePathname } from "next/navigation";
 import Hamburger from "hamburger-react";
 
 interface NavbarProps {
-  // Record of string keys and string values where each value is a path starting with a slash
-  pages: Record<string, `/${string}`>;
+  pages: Page[];
+}
+
+interface Page {
+  title: string;
+  path: string;
 }
 
 const Navbar: FC<NavbarProps> = ({ pages }) => {
   const [showNavbar, setShowNavbar] = useState(false);
   const pathname = usePathname();
+  // const [pages, setPages] = useState<Page[]>([]);
+
+  // useEffect(() => {
+  //   const fetchPages = async () => {
+  //     try {
+  //       const pages = await contentfulService.getAllPages();
+  //       console.log(pages);
+  //       setPages(pages);
+  //     } catch (error) {
+  //       console.error("Error fetching pages:", error);
+  //     }
+  //   };
+  //   fetchPages();
+  // }, []);
 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };
 
-  const removeActive = () => {
+  const hideNavbar = () => {
     setShowNavbar(false);
   };
 
@@ -45,13 +63,13 @@ const Navbar: FC<NavbarProps> = ({ pages }) => {
           />
         </div>
         <ul className={`nav-elements  ${showNavbar && "active"}`}>
-          {Object.entries(pages).map(([name, path]) => (
-            <li key={name} onClick={removeActive}>
+          {pages.map((page) => (
+            <li key={page.path} onClick={hideNavbar}>
               <Link
-                href={path}
-                className={clsx("nav-link", { active: pathname === path })}
+                href={page.path}
+                className={clsx("nav-link", { active: pathname === page.path })}
               >
-                {name.replace(/([a-z])([A-Z])/g, "$1 $2").toUpperCase()}
+                {page.title.toLocaleUpperCase()}
               </Link>
             </li>
           ))}

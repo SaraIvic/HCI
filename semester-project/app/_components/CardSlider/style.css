@@ -1,6 +1,18 @@
-.card-slider-container {
+.section-container {
   background-color: var(--blue-800);
-  
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-slider-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-btn {
+  align-self: flex-end;
 }
 
 .slider-title {
@@ -8,7 +20,6 @@
   font-size: 32px;
   font-weight: bold;
   color: var(--blue-50);
-  padding-top: 32px;
 }
 
 .card-slider {
@@ -19,7 +30,7 @@
     align-items: center;
 }
 
-.card-container {
+.section-container .card-container {
     display: flex;
     gap: 28px;
 }
@@ -27,7 +38,7 @@
 .right-arrow {
     position: absolute;
     top: 50%;
-    right: 34px;
+    right: -52px;
     color: var(--blue-50);
     font-size: 2.8rem;
     cursor: pointer;
@@ -37,18 +48,24 @@
   .left-arrow {
     position: absolute;
     top: 50%;
-    left: 34px;
+    left: -52px;
     color: var(--blue-50);
     font-size: 2.8rem;
     cursor: pointer;
     z-index: 1;
   }
 
+  @media screen and (max-width: 950px){
+    .slider-btn {
+      align-self: center;
+    }
+  }
+
   @media screen and (max-width: 550px) {
     .right-arrow {
-      right: 5%;
+      right: -15%;
     }
     .left-arrow {
-      left: 5%;
+      left: -15%;
     }
  }

@@ -8,7 +8,12 @@ import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
 interface FooterProps {
-  pages: Record<string, `/${string}`>;
+  pages: Page[];
+}
+
+interface Page {
+  title: string;
+  path: string;
 }
 
 const Footer: FC<FooterProps> = ({ pages }) => {
@@ -32,13 +37,15 @@ const Footer: FC<FooterProps> = ({ pages }) => {
           Explore our pages
         </p>
         <ul className="footer-links">
-          {Object.entries(pages).map(([name, path]) => (
-            <li key={name}>
+          {pages.map((page) => (
+            <li key={page.path}>
               <Link
-                href={path}
-                className={clsx("footer-link", { active: pathname === path })}
+                href={page.path}
+                className={clsx("footer-link", {
+                  active: pathname === page.path,
+                })}
               >
-                {name.replace(/([a-z])([A-Z])/g, "$1 $2").toUpperCase()}
+                {page.title}
               </Link>
             </li>
           ))}
