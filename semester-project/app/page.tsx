@@ -31,6 +31,12 @@ const hero02 = {
 
 const cards = [
   {
+    title: "Simba",
+    text: "Simba, the charming mix of Egzota and British Shorthair, embodies the best of both worlds. With a blend of exotic allure and British sophistication, Simba captivates hearts with his unique charm. Uncover the fascinating tale of Simba's journey to a home filled with love and admiration.",
+    button: { text: "Read more", href: "aboutUs" },
+    imageUrl: "/Simba.jpeg",
+  },
+  {
     title: "Bella",
     text: "Meet Bella, a lovable Golden Retriever who overcame adversity. Bella was rescued from a neglectful situation and, with the support of our shelter, she transformed into a happy companion. Read more about Bella's incredible journey.",
     button: { text: "Read more", href: "aboutUs" },
