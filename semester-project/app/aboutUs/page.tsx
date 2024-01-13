@@ -13,9 +13,8 @@ async function AboutUs() {
     <div className="animals-list">
       {animals &&
         animals.map((animal) => (
-          <div>
+          <div key={animal.id}>
             <Card
-              key={animal.id}
               title={animal.title}
               text={animal.description}
               button={{
