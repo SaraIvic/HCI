@@ -34,3 +34,12 @@ p{
 .animal-img {
     border-radius: 6px;
 }
+
+.animal-img-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+}

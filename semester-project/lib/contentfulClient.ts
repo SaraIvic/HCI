@@ -11,6 +11,7 @@ const getAllAnimalsQuery = `query AnimalList {
         height
         width
       }
+      animalType
     }
   }
 }`
@@ -27,17 +28,20 @@ const getAnimalByIdQuery = `query GetAnimalById($id: String!) {
       height
       width
     }
-    image {
-      url
-      height
-      width
+    imagesCollection {
+      items {
+        url
+        width
+        height
+      }
     }
+    animalType
     moreInfo {
       json
     }
   }
-}
-`
+}`
+
 interface AnimalCollectionResponse {
   animalCollection: {
     items: Animal[];
@@ -51,6 +55,7 @@ interface Animal {
   title: string;
   description: string;
   featuredImage: Image;
+  animalType: "cat" | "dog" | "other"
 }
 
 interface Image {
@@ -84,8 +89,11 @@ interface DetailAnimalResponse {
       };
       title: string;
       description: string;
-      featuredImage: Image
-      image?: Image
+      featuredImage: Image;
+      imagesCollection?: {
+        items: Image[];
+      }
+      animalType: "cat" | "dog" | "other";
     };
 }
 
@@ -94,11 +102,12 @@ interface TypeAnimalListItem {
   title: string
   description: string
   featuredImage: Image
+  animalType: "cat" | "dog" | "other"
 }
 
 interface TypeAnimalDetailItem extends TypeAnimalListItem {
   moreInfo: any
-  image?: Image
+  imagesCollection?: Image[];
 }
 
 const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`;
@@ -125,7 +134,8 @@ const getAllAnimals = async (): Promise<TypeAnimalListItem[]>=> {
         id: item.sys.id,
         title: item.title,
         description: item.description,
-        featuredImage: item.featuredImage
+        featuredImage: item.featuredImage,
+        animalType: item.animalType
       }));
 
     return animals;
@@ -158,16 +168,17 @@ const getAnimalById = async (
 
     const responseAnimal = body.data.animal;
   
-    const product = {
+    const animal = {
       id,
       title: responseAnimal.title,
       description: responseAnimal.description,
       featuredImage: responseAnimal.featuredImage,
-      image: responseAnimal.image,
+      imagesCollection: responseAnimal.imagesCollection?.items,
       moreInfo: responseAnimal.moreInfo.json,
+      animalType: responseAnimal.animalType
     };
 
-    return product;
+    return animal;
   } catch (error) {
     console.log(error);
 

@@ -15,13 +15,9 @@ interface Params {
 async function Animal({ params }: { params: Params }) {
   const animal = await contentfulService.getAnimalById(params.id);
 
-  let imgRatio1 = 0;
-  let imgRatio2 = 0;
+  let imgRatio = 0;
   if (animal) {
-    imgRatio1 = animal.featuredImage.height / animal.featuredImage.width;
-    if (animal.image) {
-      imgRatio2 = animal.image.height / animal.image.width;
-    }
+    imgRatio = animal.featuredImage.height / animal.featuredImage.width;
   }
 
   return (
@@ -33,7 +29,7 @@ async function Animal({ params }: { params: Params }) {
               className="animal-img"
               src={animal.featuredImage.url}
               width={450}
-              height={450 * imgRatio1}
+              height={450 * imgRatio}
               alt={animal.title}
             />
             <h2>{animal.title}</h2>
@@ -41,15 +37,22 @@ async function Animal({ params }: { params: Params }) {
           <div className="animal-info">
             {documentToReactComponents(animal.moreInfo)}
           </div>
-          {animal.image && (
-            <Image
-              className="animal-img"
-              src={animal.image.url}
-              width={200}
-              height={200 * imgRatio2}
-              alt={animal.title}
-            />
-          )}
+          <div className="animal-img-container">
+            {animal.imagesCollection &&
+              animal.imagesCollection.map((image) => {
+                let imageRatio = image.width / image.height;
+                return (
+                  <Image
+                    key={image.url}
+                    className="animal-img"
+                    src={image.url}
+                    width={200 * imageRatio}
+                    height={200}
+                    alt={animal.title}
+                  />
+                );
+              })}
+          </div>
         </div>
       )}
     </>
