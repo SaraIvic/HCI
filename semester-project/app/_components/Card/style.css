@@ -26,6 +26,7 @@
 .card h2, .card p {
     color: var(--blue-900)
 }
+
 .card .paragraph {
     height: 144px;
 }
@@ -45,7 +46,7 @@
     height: auto;
     }
     .card p {
-        font-size: 1em;
+        font-size: 0.9em;
     }
 }
 

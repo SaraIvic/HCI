@@ -3,15 +3,15 @@ import "./style.css";
 import Image from "next/image";
 import Button from "../Button/Button";
 
+interface ButtonProps {
+  text: string;
+  href: string;
+}
 export interface CardProps {
   title: string;
   text: string;
-  button: Button;
+  button: ButtonProps;
   imageUrl: string;
-}
-interface Button {
-  text: string;
-  href: string;
 }
 
 const Card: FC<CardProps> = ({ title, text, button, imageUrl }) => {

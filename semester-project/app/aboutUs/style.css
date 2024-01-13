@@ -1,0 +1,24 @@
+.animals-list {
+    padding: 1em 4em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em 3.75em;
+}
+
+.animals-list > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1350px) {
+    .animals-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .animals-list {
+        grid-template-columns: 1fr;
+    }
+}
