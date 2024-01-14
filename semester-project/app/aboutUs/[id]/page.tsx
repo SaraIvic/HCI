@@ -26,7 +26,7 @@ async function Animal({ params }: { params: Params }) {
         <div className="animal">
           <div className="banner">
             <Image
-              className="animal-img"
+              className="animal-img animal-main-img"
               src={animal.featuredImage.url}
               width={450}
               height={450 * imgRatio}

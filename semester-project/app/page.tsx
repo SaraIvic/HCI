@@ -30,56 +30,56 @@ const hero02 = {
   },
 };
 
-// const cards = [
-//   {
-//     title: "Simba",
-//     text: "Simba, the charming mix of Egzota and British Shorthair, embodies the best of both worlds. With a blend of exotic allure and British sophistication, Simba captivates hearts with his unique charm. Uncover the fascinating tale of Simba's journey to a home filled with love and admiration.",
-//     button: { text: "Read more", href: "aboutUs/simba" },
-//     imageUrl: "/Simba.jpeg",
-//   },
-//   {
-//     title: "Bella",
-//     text: "Meet Bella, a lovable Golden Retriever who overcame adversity. Bella was rescued from a neglectful situation and, with the support of our shelter, she transformed into a happy companion. Read more about Bella's incredible journey.",
-//     button: { text: "Read more", href: "aboutUs/bella" },
-//     imageUrl: "/Bella.jpeg",
-//   },
-//   {
-//     title: "Leo",
-//     text: "Leo, the playful tabby cat, found his way to our shelter after a rough start in life. With love and care, Leo blossomed into a mischievous feline friend, bringing joy to his forever home. Explore Leo's heartwarming story.",
-//     button: { text: "Read more", href: "aboutUs/leo" },
-//     imageUrl: "/Leo.jpeg",
-//   },
-//   {
-//     title: "Max",
-//     text: "Max, a loyal German Shepherd, was rescued from a challenging situation. Thanks to the dedication of our shelter, Max has become a guardian and best friend to his adoptive family. Learn more about Max's incredible transformation.",
-//     button: { text: "Read more", href: "aboutUs/max" },
-//     imageUrl: "/Max.png",
-//   },
-//   {
-//     title: "Rocky",
-//     text: "Rocky, the resilient Boxer mix, faced adversity with courage and determination. His story is a testament to the indomitable spirit of rescue animals. Learn more about Rocky's journey to recovery and joy.",
-//     button: { text: "Read more", href: "aboutUs/rocky" },
-//     imageUrl: "/Rocky.jpeg",
-//   },
-//   {
-//     title: "Luna",
-//     text: "Meet Luna, the adventurous Siamese cat with a captivating personality. Luna's journey from the streets to a loving home is a tale of resilience and charm. Discover more about Luna's escapades.",
-//     button: { text: "Read more", href: "aboutUs/luna" },
-//     imageUrl: "/Luna.jpeg",
-//   },
-//   {
-//     title: "Charlie",
-//     text: "Charlie, the energetic Border Collie, found a second chance at happiness in our shelter. His agility and intelligence make him a perfect companion for an active family. Read about Charlie's boundless enthusiasm.",
-//     button: { text: "Read more", href: "aboutUs/charlie" },
-//     imageUrl: "/Charlie.jpeg",
-//   },
-//   {
-//     title: "Mia",
-//     text: "Mia, the gentle Persian cat, came to us seeking warmth and care. Mia's graceful demeanor and soothing presence make her a beloved member of her forever home. Explore Mia's story of tranquility and love.",
-//     button: { text: "Read more", href: "aboutUs/mia" },
-//     imageUrl: "/Mia.jpeg",
-//   },
-// ];
+const cards = [
+  {
+    title: "Simba",
+    text: "Simba, the charming mix of Egzota and British Shorthair, embodies the best of both worlds. With a blend of exotic allure and British sophistication, Simba captivates hearts with his unique charm. Uncover the fascinating tale of Simba's journey to a home filled with love and admiration.",
+    button: { text: "Read more", href: "aboutUs/simba" },
+    imageUrl: "/Simba.jpeg",
+  },
+  {
+    title: "Bella",
+    text: "Meet Bella, a lovable Golden Retriever who overcame adversity. Bella was rescued from a neglectful situation and, with the support of our shelter, she transformed into a happy companion. Read more about Bella's incredible journey.",
+    button: { text: "Read more", href: "aboutUs/bella" },
+    imageUrl: "/Bella.jpeg",
+  },
+  {
+    title: "Leo",
+    text: "Leo, the playful tabby cat, found his way to our shelter after a rough start in life. With love and care, Leo blossomed into a mischievous feline friend, bringing joy to his forever home. Explore Leo's heartwarming story.",
+    button: { text: "Read more", href: "aboutUs/leo" },
+    imageUrl: "/Leo.jpeg",
+  },
+  {
+    title: "Max",
+    text: "Max, a loyal German Shepherd, was rescued from a challenging situation. Thanks to the dedication of our shelter, Max has become a guardian and best friend to his adoptive family. Learn more about Max's incredible transformation.",
+    button: { text: "Read more", href: "aboutUs/max" },
+    imageUrl: "/Max.png",
+  },
+  {
+    title: "Rocky",
+    text: "Rocky, the resilient Boxer mix, faced adversity with courage and determination. His story is a testament to the indomitable spirit of rescue animals. Learn more about Rocky's journey to recovery and joy.",
+    button: { text: "Read more", href: "aboutUs/rocky" },
+    imageUrl: "/Rocky.jpeg",
+  },
+  {
+    title: "Luna",
+    text: "Meet Luna, the adventurous Siamese cat with a captivating personality. Luna's journey from the streets to a loving home is a tale of resilience and charm. Discover more about Luna's escapades.",
+    button: { text: "Read more", href: "aboutUs/luna" },
+    imageUrl: "/Luna.jpeg",
+  },
+  {
+    title: "Charlie",
+    text: "Charlie, the energetic Border Collie, found a second chance at happiness in our shelter. His agility and intelligence make him a perfect companion for an active family. Read about Charlie's boundless enthusiasm.",
+    button: { text: "Read more", href: "aboutUs/charlie" },
+    imageUrl: "/Charlie.jpeg",
+  },
+  {
+    title: "Mia",
+    text: "Mia, the gentle Persian cat, came to us seeking warmth and care. Mia's graceful demeanor and soothing presence make her a beloved member of her forever home. Explore Mia's story of tranquility and love.",
+    button: { text: "Read more", href: "aboutUs/mia" },
+    imageUrl: "/Mia.jpeg",
+  },
+];
 
 async function Home() {
   const animals = await contentfulService.getAllAnimals();
@@ -92,7 +92,6 @@ async function Home() {
     },
     imageUrl: animal.featuredImage.url,
   }));
-  console.log(animals);
   return (
     <main>
       <Hero {...hero01} />

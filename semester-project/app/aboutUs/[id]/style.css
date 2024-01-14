@@ -5,12 +5,18 @@
     padding: 20px 60px;
 }
 
-h2, h3 {
+.animal h1, .animal h2, .animal h3, .animal h4, .animal h5, .animal h6, .animal p {
+    color: var(--blue-900);
+    margin-bottom: 0.4em;
+} 
+
+
+.animal h2, .animal h3 {
     text-transform: uppercase;
     margin-bottom: 0.8em;
 }
 
-p{
+.animal p{
     margin: 1em 0;
 }
 
@@ -42,4 +48,19 @@ p{
     gap: 0.5em;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width: 550px) {
+    .animal-main-img {
+        width: 350px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .animal-main-img {
+        width: 300px;
+        height: auto;
+    }
+
 }
