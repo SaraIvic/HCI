@@ -97,7 +97,7 @@ interface DetailAnimalResponse {
     };
 }
 
-interface TypeAnimalListItem {
+export interface TypeAnimalListItem {
   id: string
   title: string
   description: string

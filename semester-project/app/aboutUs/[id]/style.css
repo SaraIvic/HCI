@@ -6,10 +6,9 @@
 }
 
 .animal h1, .animal h2, .animal h3, .animal h4, .animal h5, .animal h6, .animal p {
-    color: var(--blue-900);
     margin-bottom: 0.4em;
+    color: var(--blue-900);
 } 
-
 
 .animal h2, .animal h3 {
     text-transform: uppercase;
