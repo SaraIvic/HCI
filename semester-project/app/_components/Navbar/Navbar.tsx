@@ -20,20 +20,6 @@ interface Page {
 const Navbar: FC<NavbarProps> = ({ pages }) => {
   const [showNavbar, setShowNavbar] = useState(false);
   const pathname = usePathname();
-  // const [pages, setPages] = useState<Page[]>([]);
-
-  // useEffect(() => {
-  //   const fetchPages = async () => {
-  //     try {
-  //       const pages = await contentfulService.getAllPages();
-  //       console.log(pages);
-  //       setPages(pages);
-  //     } catch (error) {
-  //       console.error("Error fetching pages:", error);
-  //     }
-  //   };
-  //   fetchPages();
-  // }, []);
 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
@@ -60,6 +46,9 @@ const Navbar: FC<NavbarProps> = ({ pages }) => {
             duration={0.6}
             toggled={showNavbar}
             onToggle={handleShowNavbar}
+            aria-label={
+              showNavbar ? "Close Navigation Menu" : "Open Navigation Menu"
+            }
           />
         </div>
         <ul className={`nav-elements  ${showNavbar && "active"}`}>
