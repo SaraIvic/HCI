@@ -3,6 +3,7 @@ import Card from "../_components/Card/Card";
 import "./style.css";
 import contentfulService from "@/lib/contentfulClient";
 import Cards from "../_components/Cards/Cards";
+import { useState } from "react";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 
 async function AboutUs() {
   const animals = await contentfulService.getAllAnimals();
+
   return (
     <div className="about-us">
       <div className="about-us-text">
