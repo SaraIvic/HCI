@@ -1,7 +1,8 @@
 .animals-list {
-    padding: 1em;
+    padding: 1em 3em;
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
     justify-content: center;
 }
+
