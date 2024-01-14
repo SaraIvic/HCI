@@ -20,7 +20,9 @@ const FilteringOptions: FC<FilteringOptionsProps> = ({
   return (
     <div className="filtering-options-btns">
       {categories.map((cat) => (
-        <button onClick={() => filterItems(cat)}>{cat}</button>
+        <button key={cat} onClick={() => filterItems(cat)}>
+          {cat}
+        </button>
       ))}
       <button onClick={() => setItems(allData)}>All</button>
     </div>

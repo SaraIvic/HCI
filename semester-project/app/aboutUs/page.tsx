@@ -32,9 +32,9 @@ async function AboutUs() {
         </p>
         <h2>THE FUREVER FAMILY</h2>
         <p>
-          Our team is not just a group of professionals – we're a family united
-          by a shared love for animals. Each member brings unique skills and
-          boundless compassion to our cause. Together, we work towards the
+          Our team is not just a group of professionals – we&apos;re a family
+          united by a shared love for animals. Each member brings unique skills
+          and boundless compassion to our cause. Together, we work towards the
           common goal of making a positive impact on the lives of our furry
           friends.
         </p>
