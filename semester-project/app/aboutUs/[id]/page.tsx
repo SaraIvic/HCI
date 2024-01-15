@@ -29,7 +29,7 @@ async function Animal({ params }: { params: Params }) {
               className="animal-img animal-main-img"
               src={animal.featuredImage.url}
               width={450}
-              height={450 * imgRatio}
+              height={450 * imageRatio}
               alt={animal.title}
             />
             <h2>{animal.title}</h2>
