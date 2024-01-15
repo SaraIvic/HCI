@@ -1,0 +1,47 @@
+.error-page h1 {
+    color: var(--blue-900);
+    font-size: 9em;
+    margin-bottom: 0.1em;
+}
+
+.error-page h2 {
+    color: var(--blue-900);
+    font-size: 1.8em;
+    margin-bottom: 1.2em;
+}
+
+.error-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1em;
+}
+
+.error-page-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 6em;
+}
+
+@media screen and (max-width: 930px) {
+    .error-page-text {
+        margin-right: 3em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .error-page-text {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .error-page h2 {
+       font-size: 1.2em;
+    }
+    .error-page h1 {
+        font-size: 7em;
+    }
+}
