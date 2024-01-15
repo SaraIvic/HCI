@@ -4,3 +4,7 @@
     justify-content: center;
     gap: 1em;
 }
+
+.filtering-options-btns #reset-btn:active {
+background-color: var(--orange-500);
+}

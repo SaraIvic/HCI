@@ -32,6 +32,7 @@ const hero02 = {
 
 async function Home() {
   const animals = await contentfulService.getAllAnimals();
+
   const cards = animals.map((animal) => ({
     title: animal.title,
     text: animal.description,
