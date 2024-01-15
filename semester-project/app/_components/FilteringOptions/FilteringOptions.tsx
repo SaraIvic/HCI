@@ -24,7 +24,9 @@ const FilteringOptions: FC<FilteringOptionsProps> = ({
           {cat}
         </button>
       ))}
-      <button onClick={() => setItems(allData)}>All</button>
+      <button id="reset-btn" onClick={() => setItems(allData)}>
+        Reset
+      </button>
     </div>
   );
 };
