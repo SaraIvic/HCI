@@ -15,9 +15,9 @@ interface Params {
 async function Animal({ params }: { params: Params }) {
   const animal = await contentfulService.getAnimalById(params.id);
 
-  let imgRatio = 0;
+  let imageRatio = 0;
   if (animal) {
-    imgRatio = animal.featuredImage.height / animal.featuredImage.width;
+    imageRatio = animal.featuredImage.height / animal.featuredImage.width;
   }
 
   return (
