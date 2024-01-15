@@ -98,15 +98,15 @@ interface DetailAnimalResponse {
 }
 
 export interface TypeAnimalListItem {
-  id: string
-  title: string
-  description: string
-  featuredImage: Image
-  animalType: "cat" | "dog" | "other"
+  id: string;
+  title: string;
+  description: string;
+  featuredImage: Image;
+  animalType: "cat" | "dog" | "other";
 }
 
 interface TypeAnimalDetailItem extends TypeAnimalListItem {
-  moreInfo: any
+  moreInfo: any;
   imagesCollection?: Image[];
 }
 
