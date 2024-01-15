@@ -12,3 +12,7 @@ button {
 button:hover{
     background-color: var(--orange-600);
 }
+
+button:active{
+    background-color: var(--orange-600);
+}
