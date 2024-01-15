@@ -42,7 +42,7 @@ const Navbar: FC<NavbarProps> = ({ pages }) => {
         <div className="hambuger-menu-icon">
           <Hamburger
             rounded
-            color="white"
+            color="#f4fcfc"
             duration={0.6}
             toggled={showNavbar}
             onToggle={handleShowNavbar}
