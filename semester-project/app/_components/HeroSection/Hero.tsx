@@ -4,7 +4,7 @@ import Image from "next/image";
 import Button from "../Button/Button";
 
 interface HeroProps {
-  imgPosition: number;
+  imgPosition: string;
   title: string;
   text: string;
   button: Button;
@@ -32,13 +32,13 @@ const Hero: FC<HeroProps> = ({ imgPosition, title, text, button, image }) => {
   );
   return (
     <section className="hero">
-      {imgPosition % 2 === 1 ? img : ""}
+      {imgPosition === "left" ? img : ""}
       <div className="hero-left">
         <h1 className="hero-title">{title.toLocaleUpperCase()}</h1>
         <p className="hero-text">{text}</p>
         <Button text={button.text} href={button.href} />
       </div>
-      {imgPosition % 2 === 0 ? img : ""}
+      {imgPosition === "right" ? img : ""}
     </section>
   );
 };
