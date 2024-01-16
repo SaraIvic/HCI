@@ -33,9 +33,9 @@ const Hero: FC<HeroProps> = ({ imgPosition, title, text, button, image }) => {
   return (
     <section className="hero">
       {imgPosition === "left" ? img : ""}
-      <div className="hero-left">
+      <div className="hero-text">
         <h1 className="hero-title">{title.toLocaleUpperCase()}</h1>
-        <p className="hero-text">{text}</p>
+        <p className="hero-paragraph">{text}</p>
         <Button text={button.text} href={button.href} />
       </div>
       {imgPosition === "right" ? img : ""}
