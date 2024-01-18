@@ -14,7 +14,7 @@ const pages = [
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Animal Rescue Shelter",
+  title: "Animal Shelter",
   description: "We're on a mission to rescue and rehome animals in need.",
 };
 
