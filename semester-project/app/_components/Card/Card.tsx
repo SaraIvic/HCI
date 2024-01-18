@@ -17,16 +17,18 @@ export interface CardProps {
 const Card: FC<CardProps> = ({ title, text, button, imageUrl }) => {
   return (
     <div className="card">
-      <Image
-        className="card-img"
-        src={imageUrl}
-        width={330}
-        height={220}
-        alt={title}
-      />
-      <div className="card-text">
-        <h2>{title.toLocaleUpperCase()}</h2>
-        <p className="paragraph">{text}</p>
+      <div>
+        <Image
+          className="card-img"
+          src={imageUrl}
+          width={342}
+          height={228}
+          alt={title}
+        />
+        <div className="card-text">
+          <h2>{title.toLocaleUpperCase()}</h2>
+          <p className="paragraph">{text}</p>
+        </div>
       </div>
       <Button {...button} />
     </div>
