@@ -13,9 +13,8 @@ interface CardSliderProps {
 }
 
 const CardSlider: FC<CardSliderProps> = ({ cards }) => {
-  const isMounted = useRef(false);
   const [currentCards, setCurrentCards] = useState([0, 1, 2]);
-  const [displayCount, setDisplayCount] = useState(3);
+  const [displayCount, setDisplayCount] = useState(0);
   const length = cards.length;
 
   useEffect(() => {
