@@ -37,22 +37,26 @@ async function Animal({ params }: { params: Params }) {
           <div className="animal-info">
             {documentToReactComponents(animal.moreInfo)}
           </div>
-          <div className="animal-img-container">
-            {animal.imagesCollection &&
-              animal.imagesCollection.map((image) => {
-                let imageRatio = image.width / image.height;
-                return (
-                  <Image
-                    key={image.url}
-                    className="animal-img"
-                    src={image.url}
-                    width={200 * imageRatio}
-                    height={200}
-                    alt={animal.title}
-                  />
-                );
-              })}
-          </div>
+          {animal.imagesCollection && animal.imagesCollection?.length !== 0 && (
+            <>
+              <h3>More photos:</h3>
+              <div className="animal-img-container">
+                {animal.imagesCollection.map((image) => {
+                  let imageRatio = image.width / image.height;
+                  return (
+                    <Image
+                      key={image.url}
+                      className="animal-img"
+                      src={image.url}
+                      width={235 * imageRatio}
+                      height={235}
+                      alt={animal.title}
+                    />
+                  );
+                })}
+              </div>
+            </>
+          )}
         </div>
       )}
     </>

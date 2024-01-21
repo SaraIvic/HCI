@@ -42,10 +42,9 @@
     .hero-title {
         font-size: 2.5em;
     }
-
     .hero-paragraph {
-        font-size: 1rem;
-    }
+        font-size: 1em;
+    }  
 }
 
 @media screen and (max-width: 950px) {
@@ -64,7 +63,13 @@
     }
     
     .hero-paragraph {
-        font-size: 1em; 
-        margin-bottom: 1.875em; 
+        margin-bottom: 1.875em;
+        font-size: 1.1rem;
+    }  
+}
+
+@media screen and (max-width: 600px) {
+    .hero-paragraph {
+        font-size: 1em;
     }  
 }

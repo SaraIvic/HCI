@@ -32,13 +32,15 @@ const Navbar: FC<NavbarProps> = ({ pages }) => {
   return (
     <nav className="navbar">
       <div className="container">
-        <Image
-          className="nav-logo"
-          src="/logo.png"
-          width={93}
-          height={65}
-          alt="Navbar logo"
-        />
+        <Link href={"/"}>
+          <Image
+            className="nav-logo"
+            src="/logo.png"
+            width={93}
+            height={65}
+            alt="Navbar logo"
+          />
+        </Link>
         <div className="hambuger-menu-icon">
           <Hamburger
             rounded

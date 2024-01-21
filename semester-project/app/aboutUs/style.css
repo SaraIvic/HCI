@@ -1,11 +1,15 @@
 .about-us-text {
-    max-width: 1000px;
+    max-width: 750px;
     padding: 1em 5em;
 }
 
 .about-us h1, .about-us h2, .about-us h3, .about-us h4, .about-us h5, .about-us h6, .about-us p {
     color: var(--blue-900);
 } 
+
+.about-us p {
+    line-height: 1.9rem;
+}
 
 @media screen and (max-width: 500px) {
     .about-us-text {

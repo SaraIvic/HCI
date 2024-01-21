@@ -17,6 +17,8 @@
 
 .animal p{
     margin: 1em 0;
+    line-height: 1.9rem;
+    text-wrap: balance;
 }
 
 .banner h2 {
@@ -34,6 +36,7 @@
 
 .animal-info {
     max-width: 700px;
+    margin-bottom: 2rem;
 }
 
 .animal-img {
@@ -48,6 +51,8 @@
     justify-content: center;
     align-items: center;
 }
+
+
 
 @media screen and (max-width: 550px) {
     .animal-main-img {
