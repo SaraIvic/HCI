@@ -9,11 +9,11 @@ import FilteringOptions from "../FilteringOptions/FilteringOptions";
 
 interface CardsProps {
   animals: TypeAnimalListItem[];
+  animalTypes: string[];
 }
 
-const Cards: FC<CardsProps> = ({ animals }) => {
+const Cards: FC<CardsProps> = ({ animals, animalTypes }) => {
   const [filteredAnimals, setFilteredAnimals] = useState(animals);
-  const AnimalTypes = ["cat", "dog", "other"];
 
   const filterAnimals = (animalType: string) => {
     const newAnimals = animals.filter(
@@ -25,7 +25,7 @@ const Cards: FC<CardsProps> = ({ animals }) => {
   return (
     <>
       <FilteringOptions
-        categories={AnimalTypes}
+        categories={animalTypes}
         filterItems={filterAnimals}
         allData={animals}
         setItems={setFilteredAnimals}

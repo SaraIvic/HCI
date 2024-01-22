@@ -14,7 +14,7 @@ const getAllAnimalsQuery = `query AnimalList {
       animalType
     }
   }
-}`
+}`;
 
 const getAnimalByIdQuery = `query GetAnimalById($id: String!) {
   animal(id: $id) {
@@ -40,7 +40,27 @@ const getAnimalByIdQuery = `query GetAnimalById($id: String!) {
       json
     }
   }
-}`
+}`;
+
+const getAllAnimalTypesQuery = `query {
+  animalCollection {
+    items {
+      animalType
+    }
+  }
+}`;
+
+const getAllHeroSectionsQuery = `query HeroSectionList{
+  heroSectionCollection {
+    items {
+      index
+      title
+      text
+			buttonText
+      buttonUrl
+    }
+  }
+}`;
 
 interface AnimalCollectionResponse {
   animalCollection: {
@@ -108,6 +128,39 @@ export interface TypeAnimalListItem {
 interface TypeAnimalDetailItem extends TypeAnimalListItem {
   moreInfo: any;
   imagesCollection?: Image[];
+}
+
+interface AnimalTypesCollectionResponse {
+  animalCollection: {
+    items: AnimalTypes[]
+  }
+}
+
+interface AnimalTypes {
+  animalType: string;
+}
+interface HeroSection {
+  index: number;
+  title: string;
+  text: string;
+  buttonText: string
+  buttonUrl: string;
+}
+
+interface  TypeHeroSectionListItem{
+    index: number;
+    title: string;
+    text: string;
+    button: {
+      text: string;
+      href: string;
+    },
+}
+
+interface HeroSectionCollectionResponse {
+  heroSectionCollection: {
+    items: HeroSection[];
+  }
 }
 
 const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`;
@@ -186,9 +239,73 @@ const getAnimalById = async (
   }
 };
 
+const getAllAnimalTypes = async (): Promise<AnimalTypes[]> => {
+  try {
+    const response = await fetch(baseUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_KEY}`,
+      },
+      body: JSON.stringify({ query: getAllAnimalTypesQuery }),
+    });
+    const body = (await response.json()) as {
+      data: AnimalTypesCollectionResponse;
+    };
+
+    const animalTypes: AnimalTypes[] = body.data.animalCollection.items.map(
+      (item) => ({
+        animalType: item.animalType,
+      })
+    );
+
+    return animalTypes;
+  } catch (error) {
+    console.log(error);
+
+    return [];
+  }
+};
+
+const getAllHeroSections= async (): Promise<TypeHeroSectionListItem[]>=> {
+  try {
+    const response = await fetch(baseUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_KEY}`,
+      },
+      body: JSON.stringify({ query: getAllHeroSectionsQuery }),
+    });
+
+    const body = (await response.json()) as {
+      data: HeroSectionCollectionResponse;
+    };
+
+    const heroSections =
+      body.data.heroSectionCollection.items.map((item) => ({
+        index: item.index,
+        title: item.title,
+        text: item.text,
+        button: {
+          text: item.buttonText,
+          href: item.buttonUrl
+        },
+      }));
+
+    return heroSections;
+  } catch (error) {
+    console.log(error);
+
+    return [];
+  }
+};
+
 const contentfulService = {
   getAllAnimals,
-  getAnimalById
+  getAnimalById,
+  getAllAnimalTypes,
+  getAllHeroSections
 };
 
 export default contentfulService;
