@@ -3,7 +3,6 @@ import Card from "../_components/Card/Card";
 import "./style.css";
 import contentfulService from "@/lib/contentfulClient";
 import Cards from "../_components/Cards/Cards";
-import { useState } from "react";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -11,6 +10,11 @@ export const metadata: Metadata = {
 
 async function AboutUs() {
   const animals = await contentfulService.getAllAnimals();
+  const animalTypes = await contentfulService.getAllAnimalTypes();
+  const uniqueAnimalTypesSet = new Set(
+    animalTypes.map((item) => item.animalType)
+  );
+  const uniqueAnimalTypesArray = Array.from(uniqueAnimalTypesSet);
 
   return (
     <div className="about-us">
@@ -38,7 +42,7 @@ async function AboutUs() {
           that happen when love knows no bounds.
         </p>
       </div>
-      <Cards animals={animals} />
+      <Cards animals={animals} animalTypes={uniqueAnimalTypesArray} />
     </div>
   );
 }
