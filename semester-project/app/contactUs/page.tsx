@@ -11,7 +11,7 @@ function ContactUs() {
   return (
     <div className="contact-us">
       <form className="contact-us-form">
-        <h1>Contact Us:</h1>
+        <h1>Contact Us</h1>
         <input type="text" id="name" name="name" placeholder="Name"></input>
         <input type="text" id="email" name="email" placeholder="E-mail"></input>
         <textarea id="message" name="message" placeholder="Message"></textarea>
