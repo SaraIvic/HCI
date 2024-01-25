@@ -1,6 +1,13 @@
+.about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .about-us-text {
-    max-width: 750px;
-    padding: 1em 5em;
+    max-width: 75ch;
+    width: 80%;
+    margin: 1.5em 0;
 }
 
 .about-us h1, .about-us h2, .about-us h3, .about-us h4, .about-us h5, .about-us h6, .about-us p {
@@ -9,7 +16,12 @@
 
 .about-us p {
     line-height: 1.9rem;
+    text-wrap: balance;
 }
+
+.about-us h2 {
+   margin-top: 1em;
+} 
 
 @media screen and (max-width: 500px) {
     .about-us-text {
