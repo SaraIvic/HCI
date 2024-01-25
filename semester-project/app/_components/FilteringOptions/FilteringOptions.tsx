@@ -19,9 +19,9 @@ const FilteringOptions: FC<FilteringOptionsProps> = ({
 }) => {
   return (
     <div className="filtering-options-btns">
-      {categories.map((cat) => (
-        <button key={cat} onClick={() => filterItems(cat)}>
-          {cat}
+      {categories.sort().map((category) => (
+        <button key={category} onClick={() => filterItems(category)}>
+          {category}
         </button>
       ))}
       <button id="reset-btn" onClick={() => setItems(allData)}>
