@@ -24,12 +24,12 @@ const Footer: FC<FooterProps> = ({ pages }) => {
         <Image
           className="footer-logo"
           src="/logo.png"
-          width={140}
-          height={98}
+          width={168}
+          height={112}
           alt="Footer logo"
         />
-        <p className="paragraph">Changing Destinies,</p>
-        <p className="paragraph">One Paw at a Time</p>
+        <p className="paragraph centered">Changing Destinies,</p>
+        <p className="paragraph centered">One Paw at a Time</p>
       </div>
       <div className="footer-center">
         <h2>SITEMAP</h2>
@@ -57,8 +57,8 @@ const Footer: FC<FooterProps> = ({ pages }) => {
           <Image
             className="logo"
             src="/email-logo.png"
-            width={30}
-            height={30}
+            width={26}
+            height={26}
             alt="Email logo"
           />
           <p className="paragraph">info@sheltername.org</p>
@@ -67,8 +67,8 @@ const Footer: FC<FooterProps> = ({ pages }) => {
           <Image
             className="logo"
             src="/phone-logo.png"
-            width={30}
-            height={30}
+            width={26}
+            height={26}
             alt="Phone logo"
           />
           <p className="paragraph">(555) 123-4567</p>

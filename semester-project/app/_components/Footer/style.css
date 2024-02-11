@@ -13,8 +13,7 @@
 
 .footer .paragraph {
     color: var(--blue-50);
-    line-height: 24px;
-    margin-bottom: 8px;
+    line-height: 28px;
 }
 
  footer .paragraph#darker {
@@ -27,8 +26,12 @@ footer .paragraph#bold {
     font-size: 18px;
 }
 
+footer .centered {
+    padding-left: 16px;
+}
+
 .footer-logo {
-    margin-bottom: 20px;
+    margin-bottom: 2em;
 }
 
 .footer-links {
@@ -92,7 +95,7 @@ h2 {
     }
     .footer-logo {
         width: 120px;
-        height: auto;
+        height: 80px;
     }
     .logo {
         width: 20px;
@@ -100,5 +103,8 @@ h2 {
     }
     footer .paragraph#bold {
         font-size: 14px;
+    }
+    footer .centered {
+        padding-left: 10px;
     }
 }
