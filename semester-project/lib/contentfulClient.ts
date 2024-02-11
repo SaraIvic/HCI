@@ -62,6 +62,16 @@ const getAllHeroSectionsQuery = `query HeroSectionList{
   }
 }`;
 
+const getAboutUsTextQuery = `query AboutUsText{
+  aboutUsCollection {
+     items {
+       text {
+         json
+       }
+     }
+   }
+}`
+
 interface AnimalCollectionResponse {
   animalCollection: {
     items: Animal[];
@@ -301,11 +311,37 @@ const getAllHeroSections= async (): Promise<TypeHeroSectionListItem[]>=> {
   }
 };
 
+const getAboutUsText= async (): Promise<any>=> {
+  try {
+    const response = await fetch(baseUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_KEY}`,
+      },
+      body: JSON.stringify({ query: getAboutUsTextQuery }),
+    });
+
+    const body = (await response.json()) as {
+      data: any;
+    };
+
+    const text = body.data.aboutUsCollection.items[0].text.json;
+
+    return text;
+  } catch (error) {
+    console.log(error);
+
+    return [];
+  }
+};
+
 const contentfulService = {
   getAllAnimals,
   getAnimalById,
   getAllAnimalTypes,
-  getAllHeroSections
+  getAllHeroSections,
+  getAboutUsText
 };
 
 export default contentfulService;

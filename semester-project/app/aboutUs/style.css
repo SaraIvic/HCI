@@ -19,6 +19,10 @@
     text-wrap: balance;
 }
 
+.about-us h1 {
+    margin-bottom: 1.6em;
+ }
+
 .about-us h2 {
    margin-top: 1em;
 }
