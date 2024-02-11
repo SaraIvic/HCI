@@ -4,7 +4,6 @@ import { FC, useEffect, useRef, useState } from "react";
 import "./style.css";
 import Card from "../Card/Card";
 import { CardProps } from "../Card/Card";
-import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Button from "../Button/Button";
 

@@ -39,7 +39,7 @@ const Cards: FC<CardsProps> = ({ animals, animalTypes }) => {
                 text={animal.description}
                 button={{
                   text: "Read More",
-                  href: `/aboutUs/${animal.id}`,
+                  href: `/adoption/${animal.id}`,
                 }}
                 imageUrl={animal.featuredImage.url}
               />
