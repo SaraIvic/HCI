@@ -55,6 +55,7 @@ async function Animal({ params }: { params: Params }) {
                   );
                 })}
               </div>
+              <button>ADOPT ME</button>
             </>
           )}
         </div>

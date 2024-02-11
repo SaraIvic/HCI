@@ -52,6 +52,22 @@
     align-items: center;
 }
 
+.animal button {
+    margin-top: 1.4em;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--blue-900);
+    background-color: var(--orange-500);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 26px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.animal button:hover{
+    background-color: var(--orange-600);
+}
 
 
 @media screen and (max-width: 550px) {

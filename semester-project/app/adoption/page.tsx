@@ -1,16 +1,23 @@
 import { Metadata } from "next";
+import Cards from "../_components/Cards/Cards";
+import contentfulService from "@/lib/contentfulClient";
 
 export const metadata: Metadata = {
   title: "Adoption",
 };
 
-function Adoption() {
+async function Adoption() {
+  const animals = await contentfulService.getAllAnimals();
+  const animalTypes = await contentfulService.getAllAnimalTypes();
+  const uniqueAnimalTypesSet = new Set(
+    animalTypes.map((item) => item.animalType)
+  );
+  const uniqueAnimalTypesArray = Array.from(uniqueAnimalTypesSet);
+
   return (
-    <main className="flex justify-center text-4x1 p-14">
-      <h1 className="flex justify-center text-4x1 p-14 font-bold">
-        Adoption page
-      </h1>
-    </main>
+    <>
+      <Cards animals={animals} animalTypes={uniqueAnimalTypesArray} />
+    </>
   );
 }
 

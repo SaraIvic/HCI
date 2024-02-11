@@ -61,7 +61,7 @@ const CardSlider: FC<CardSliderProps> = ({ cards }) => {
 
   return (
     <section className="section-container">
-      <h2 className="slider-title">SUCCES STORIES</h2>
+      <h2 className="slider-title">ADOPT ME</h2>
       <div className="card-slider-container">
         <div className="card-slider">
           <IoIosArrowBack className="left-arrow" onClick={prevCard} />
@@ -75,7 +75,7 @@ const CardSlider: FC<CardSliderProps> = ({ cards }) => {
           </div>
         </div>
         <div className="slider-btn">
-          <Button href="/aboutUs" text="View All" />
+          <Button href="/adoption" text="View All" />
         </div>
       </div>
     </section>
