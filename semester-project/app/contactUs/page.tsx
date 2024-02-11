@@ -15,8 +15,8 @@ function ContactUs() {
         <input type="text" id="name" name="name" placeholder="Name"></input>
         <input type="text" id="email" name="email" placeholder="E-mail"></input>
         <textarea id="message" name="message" placeholder="Message"></textarea>
-        {/* <button type="submit">Send Message</button> */}
-        <Button text="Send Message" href="" />
+        <button type="submit">SEND MESSAGE</button>
+        {/* <Button text="Send Message" href="" /> */}
       </form>
       <Image
         className="contact-us-img"
