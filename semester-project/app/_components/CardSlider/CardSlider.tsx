@@ -16,13 +16,17 @@ const CardSlider: FC<CardSliderProps> = ({ cards }) => {
   const [displayCount, setDisplayCount] = useState(0);
   const length = cards.length;
 
+  const handleResize = () => {
+    updateDisplayCount();
+  };
+
   useEffect(() => {
     updateDisplayCount();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [handleResize]);
 
   const updateDisplayCount = () => {
     const screenWidth = window.innerWidth;
@@ -34,10 +38,6 @@ const CardSlider: FC<CardSliderProps> = ({ cards }) => {
     } else {
       setDisplayCount(3); // larger screens
     }
-  };
-
-  const handleResize = () => {
-    updateDisplayCount();
   };
 
   const shiftArray = (arr: number[], shiftAmount: number) => {
