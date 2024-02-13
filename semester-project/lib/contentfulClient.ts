@@ -72,6 +72,20 @@ const getAboutUsTextQuery = `query AboutUsText{
    }
 }`
 
+const getGetInvolvedTextQuery = `query GetInvolvedText {
+  getInvolvedCollection {
+    items {
+      mainTitle
+      subtitle
+      mainInfo
+      volonteerTitle
+      volonteerInfo
+      donateTitle
+      donateInfo
+    }
+  }
+}`
+
 interface AnimalCollectionResponse {
   animalCollection: {
     items: Animal[];
@@ -171,6 +185,16 @@ interface HeroSectionCollectionResponse {
   heroSectionCollection: {
     items: HeroSection[];
   }
+}
+
+interface getInvolvedData {
+  mainTitle: string;
+  subtitle: string;
+  mainInfo: string;
+  volonteerTitle: string;
+  volonteerInfo: string;
+  donateTitle: string;
+  donateInfo: string;
 }
 
 const baseUrl = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master`;
@@ -332,7 +356,32 @@ const getAboutUsText= async (): Promise<any>=> {
   } catch (error) {
     console.log(error);
 
-    return [];
+    return null;
+  }
+};
+
+const getGetInvolvedText= async (): Promise<getInvolvedData | null>=> {
+  try {
+    const response = await fetch(baseUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_KEY}`,
+      },
+      body: JSON.stringify({ query: getGetInvolvedTextQuery }),
+    });
+
+    const body = (await response.json()) as {
+      data: any;
+    };
+
+    const text = body.data.getInvolvedCollection.items[0];
+
+    return text;
+  } catch (error) {
+    console.log(error);
+
+    return null;
   }
 };
 
@@ -341,7 +390,8 @@ const contentfulService = {
   getAnimalById,
   getAllAnimalTypes,
   getAllHeroSections,
-  getAboutUsText
+  getAboutUsText,
+  getGetInvolvedText,
 };
 
 export default contentfulService;
