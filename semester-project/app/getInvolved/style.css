@@ -1,0 +1,64 @@
+.getInvolved-img {
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.4rem;
+}
+
+.getInvolved p, .getInvolved h1, .getInvolved h2, .getInvolved h3, .getInvolved h4 {
+    color: var(--blue-900);
+    text-wrap: wrap;
+}
+
+.getInvolved p {
+    max-width: 60ch;
+    line-height: 1.9rem;
+}
+
+.getInvolved h1 {
+    font-size: 2.4rem;
+}
+
+.getInvolved {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem 1.6rem;
+}
+
+.getInvolved-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.getInvolved-section {
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 450px;
+    background-color: var(--blue-50);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.getInvolved-section .btn {
+    align-self: flex-start;
+    margin-top: 0.6rem;
+}
+
+.getInvolved-intro h1, h4 {
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    .getInvolved-section, .getInvolved-intro{
+        width: 90%;
+    }
+
+    .getInvolved-img {
+        width: 100%;
+    }
+}
