@@ -37,11 +37,11 @@ async function GetInvolved() {
             src="/volonteer.jpeg"
             width={450}
             height={250}
-            alt="volonteer"
+            alt="volunteer"
           />
           <h2>{getInvolvedText?.volonteerTitle}</h2>
           <p>{getInvolvedText?.volonteerInfo}</p>
-          <Button text="Volonteer" href="" />
+          <Button text="Volunteer" href="" />
         </div>
       </div>
     </div>
